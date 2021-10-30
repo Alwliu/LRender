@@ -17,6 +17,7 @@ int main()
 
 	LRender->Init();
 
+	const char* Grid = "D:/C++App/LRender/Resource/testPlane.fbx";
 	const char* fbxFile = "D:/C++App/LRender/Resource/testCube.fbx";
 	const char* fbxFile2 = "D:/C++App/LRender/Resource/testSphere.fbx";
 
@@ -26,6 +27,7 @@ int main()
 	ResourceManager::loadShaderFromFile("D:/C++App/LRender/Shaders/Unlit.vert", "D:/C++App/LRender/Shaders/Unlit.frag", NULL);
 	ResourceManager::loadShaderFromFile("D:/C++App/LRender/Shaders/BlinnPhong.vert", "D:/C++App/LRender/Shaders/BlinnPhong.frag", NULL);
 
+	ResourceManager::loadModelFromFile(Grid);
 	ResourceManager::loadModelFromFile(fbxFile);
 	ResourceManager::loadModelFromFile(fbxFile2);
 
@@ -42,13 +44,11 @@ int main()
 		
 		LRender->ClearScreen();
 
-		LRender->DrawTestGrid(&ResourceManager::Shaders["BlinnPhong"]);
-
 		LRender->DrawLightDepth(&ResourceManager::Lighters["DirecLight"], &ResourceManager::Shaders["LightDepth"]);
 
 		LRender->Draw(&ResourceManager::Shaders["BlinnPhong"], &ResourceManager::Lighters["DirecLight"]);
 
-		LRender->DebugLightDepthMap(&ResourceManager::Shaders["DebugLightDepth"], &ResourceManager::Lighters["DirecLight"]);
+		//LRender->DebugLightDepthMap(&ResourceManager::Shaders["DebugLightDepth"], &ResourceManager::Lighters["DirecLight"]);
 
 		LRender->Update();
 	}
