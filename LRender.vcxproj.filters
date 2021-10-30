@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{a27a45af-8c4a-46d9-973e-be8363c1418b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Classes">
+      <UniqueIdentifier>{162b52b9-34af-47c0-af39-9901080a644c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Butility">
+      <UniqueIdentifier>{e2e0ec8e-b067-4b97-96ea-8c373d734c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{1d93e62d-88c1-4e0c-ab8b-d0ae5d85827d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\glad.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Classes\Mesh.cpp">
+      <Filter>Source\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Classes\Model.cpp">
+      <Filter>Source\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Classes\Material.cpp">
+      <Filter>Source\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Classes\ResourceManager.cpp">
+      <Filter>Source\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Classes\Shader.cpp">
+      <Filter>Source\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Classes\Texture.cpp">
+      <Filter>Source\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Butility\stb_image.cpp">
+      <Filter>Source\Butility</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Classes\Renderer.cpp">
+      <Filter>Source\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Classes\Camera.cpp">
+      <Filter>Source\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Classes\Light.cpp">
+      <Filter>Source\Classes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Classes\Mesh.h">
+      <Filter>Source\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Classes\Model.h">
+      <Filter>Source\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Classes\Material.h">
+      <Filter>Source\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Classes\ResourceManager.h">
+      <Filter>Source\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Classes\Shader.h">
+      <Filter>Source\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Classes\Texture.h">
+      <Filter>Source\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Butility\stb_image.h">
+      <Filter>Source\Butility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Classes\Renderer.h">
+      <Filter>Source\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Classes\Camera.h">
+      <Filter>Source\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Classes\Light.h">
+      <Filter>Source\Classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\Unlit.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\Unlit.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\BlinnPhong.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\BlinnPhong.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\LightDepth.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\LightDepth.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\DebugLightDepth.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\DebugLightDepth.frag">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
