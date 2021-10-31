@@ -120,7 +120,7 @@ void Renderer::SetLightState(DirLight* light)
 {
 	unsigned int depthMapFBO;
 	glGenFramebuffers(1, &depthMapFBO);
-	Texture2D depthMap(1024, 1024);
+	Texture2D depthMap(2048, 2048);
 	depthMap.Internal_Format = GL_DEPTH_COMPONENT;
 	depthMap.Image_Format = GL_DEPTH_COMPONENT;
 	glGenTextures(1, &depthMap.ID);
