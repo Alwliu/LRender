@@ -7,6 +7,14 @@
 #include "Shader.h"
 #include <map>
 
+enum class ShadingModel
+{
+	Unlit,
+	BlinnPhong,
+	LightDepth,
+	DebugLightDepth
+};
+
 class ResourceManager
 {
 public:

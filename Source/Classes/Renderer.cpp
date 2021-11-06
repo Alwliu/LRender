@@ -143,27 +143,35 @@ void Renderer::SetLightState(DirLight* light)
 	this->FrameBuffer[light->name] = depthMapFBO;
 }
 
-void Renderer::DrawLightDepth(DirLight* light, Shader* shader)
+void Renderer::DrawLightDepth(DirLight* light, ShadingModel shadingModel)
 {
-	Texture2D& depthMap = ResourceManager::Textures[light->name];
-	unsigned int depthMapFBO = this->FrameBuffer[light->name];
+	Shader* shader = nullptr;
 
-	glViewport(0, 0, depthMap.Width, depthMap.Height);
-	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
-	glClear(GL_DEPTH_BUFFER_BIT);
+	if (shadingModel == ShadingModel::LightDepth)
+		shader = &ResourceManager::Shaders["LightDepth"];
 
-	shader->Use();
-	shader->SetMat4("LightSpaceMatrix", light->GetLightSpaceMatrix());
-
-	for (auto iter : this->RenderStates)
+	if (shader)
 	{
-		glBindVertexArray(iter.VAO);
-		glDrawElements(GL_TRIANGLES, iter.IndicesSize, GL_UNSIGNED_INT, 0);
-		glBindVertexArray(0);
-	}
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		Texture2D& depthMap = ResourceManager::Textures[light->name];
+		unsigned int depthMapFBO = this->FrameBuffer[light->name];
 
-	glViewport(0, 0, this->ScreenWidth, this->ScreenHeight);
+		glViewport(0, 0, depthMap.Width, depthMap.Height);
+		glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+		glClear(GL_DEPTH_BUFFER_BIT);
+
+		shader->Use();
+		shader->SetMat4("LightSpaceMatrix", light->GetLightSpaceMatrix());
+
+		for (auto iter : this->RenderStates)
+		{
+			glBindVertexArray(iter.VAO);
+			glDrawElements(GL_TRIANGLES, iter.IndicesSize, GL_UNSIGNED_INT, 0);
+			glBindVertexArray(0);
+		}
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+		glViewport(0, 0, this->ScreenWidth, this->ScreenHeight);
+	}
 }
 
 void Renderer::SetUniformParameters()

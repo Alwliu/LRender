@@ -17,15 +17,15 @@ int main()
 
 	LRender->Init();
 
-	const char* Grid = "D:/C++App/LRender/Resource/testPlane.fbx";
-	const char* fbxFile = "D:/C++App/LRender/Resource/testCube.fbx";
-	const char* fbxFile2 = "D:/C++App/LRender/Resource/testSphere.fbx";
+	const char* Grid = "G:/C++App/LRender/Resource/testPlane.fbx";
+	const char* fbxFile = "G:/C++App/LRender/Resource/testCube.fbx";
+	const char* fbxFile2 = "G:/C++App/LRender/Resource/testSphere.fbx";
 
-	ResourceManager::loadShaderFromFile("D:/C++App/LRender/Shaders/LightDepth.vert", "D:/C++App/LRender/Shaders/LightDepth.frag", NULL);
-	ResourceManager::loadShaderFromFile("D:/C++App/LRender/Shaders/DebugLightDepth.vert", "D:/C++App/LRender/Shaders/DebugLightDepth.frag", NULL);
+	ResourceManager::loadShaderFromFile("G:/C++App/LRender/Shaders/LightDepth.vert", "G:/C++App/LRender/Shaders/LightDepth.frag", NULL);
+	ResourceManager::loadShaderFromFile("G:/C++App/LRender/Shaders/DebugLightDepth.vert", "G:/C++App/LRender/Shaders/DebugLightDepth.frag", NULL);
 
-	ResourceManager::loadShaderFromFile("D:/C++App/LRender/Shaders/Unlit.vert", "D:/C++App/LRender/Shaders/Unlit.frag", NULL);
-	ResourceManager::loadShaderFromFile("D:/C++App/LRender/Shaders/BlinnPhong.vert", "D:/C++App/LRender/Shaders/BlinnPhong.frag", NULL);
+	ResourceManager::loadShaderFromFile("G:/C++App/LRender/Shaders/Unlit.vert", "G:/C++App/LRender/Shaders/Unlit.frag", NULL);
+	ResourceManager::loadShaderFromFile("G:/C++App/LRender/Shaders/BlinnPhong.vert", "G:/C++App/LRender/Shaders/BlinnPhong.frag", NULL);
 
 	ResourceManager::loadModelFromFile(Grid);
 	ResourceManager::loadModelFromFile(fbxFile);
@@ -44,11 +44,11 @@ int main()
 		
 		LRender->ClearScreen();
 
-		LRender->DrawLightDepth(&ResourceManager::Lighters["DirecLight"], &ResourceManager::Shaders["LightDepth"]);
+		LRender->DrawLightDepth(&ResourceManager::Lighters["DirecLight"]);
 
 		LRender->Draw(&ResourceManager::Shaders["BlinnPhong"], &ResourceManager::Lighters["DirecLight"]);
 
-		//LRender->DebugLightDepthMap(&ResourceManager::Shaders["DebugLightDepth"], &ResourceManager::Lighters["DirecLight"]);
+		LRender->DebugLightDepthMap(&ResourceManager::Shaders["DebugLightDepth"], &ResourceManager::Lighters["DirecLight"]);
 
 		LRender->Update();
 	}

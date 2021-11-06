@@ -63,6 +63,7 @@ public:
 		lastFram = 0.0;
 		lastX = screenWidth / 2.0f;
 		lastY = screenHeight / 2.0f;
+		UniformBuffer = 0;
 	};
 
 	void Setsettings(Rendersettings* settings);
@@ -79,7 +80,7 @@ public:
 
 	void SetLightState(DirLight* light);
 
-	void DrawLightDepth(DirLight* light, Shader* shader);
+	void DrawLightDepth(DirLight* light, ShadingModel shadingModel = ShadingModel::LightDepth);
 
 	void Draw(Shader* shader, DirLight* shadowLight);
 
