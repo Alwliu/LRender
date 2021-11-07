@@ -96,7 +96,7 @@ public:
 	void DrawTestGrid(Shader* shader);
 
 	// Debug light depth map
-	void DebugLightDepthMap(Shader* debugShader, DirLight* light);
+	void DebugLightDepthMap( DirLight* light, ShadingModel shadingModel = ShadingModel::DebugLightDepth);
 
 private:
 	// Glad: load all OpenGL function pointers

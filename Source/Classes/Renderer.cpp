@@ -332,8 +332,10 @@ void Renderer::DrawTestGrid(Shader* shader)
 	glBindVertexArray(0);
 }
 
-void Renderer::DebugLightDepthMap(Shader* debugShader, DirLight* light)
+void Renderer::DebugLightDepthMap(DirLight* light, ShadingModel shadingModel)
 {
+	Shader* debugShader = &ResourceManager::Shaders["DebugLightDepth"];
+
 	GLuint quadVAO, quadVBO;
 	GLfloat quadVertices[] = {
 		// Positions        // Texture Coords

@@ -48,7 +48,7 @@ int main()
 
 		LRender->Draw(&ResourceManager::Shaders["BlinnPhong"], &ResourceManager::Lighters["DirecLight"]);
 
-		LRender->DebugLightDepthMap(&ResourceManager::Shaders["DebugLightDepth"], &ResourceManager::Lighters["DirecLight"]);
+		LRender->DebugLightDepthMap(&ResourceManager::Lighters["DirecLight"]);
 
 		LRender->Update();
 	}
